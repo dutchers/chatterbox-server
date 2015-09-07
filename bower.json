@@ -1,0 +1,27 @@
+{
+  "name": "chattrboxd",
+  "version": "0.0.1",
+  "homepage": "https://github.com/dutchers/2015-08-chatterbox-server",
+  "authors": [
+    "Alex Hutchison <ahutch006@gmail.com>"
+  ],
+  "description": "chat application and server",
+  "main": "server/basic-server.js",
+  "keywords": [
+    "chat",
+    "node"
+  ],
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "client/bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "jquery": "~2.1.4",
+    "underscore": "~1.8.3"
+  }
+}
