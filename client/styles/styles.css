@@ -29,7 +29,7 @@
   font-weight: 200;
   display: inline-block;
   height: 40px;
-  background-color: #337ab7;
+  background-color: #3498DB;
   padding: 0 7px;
   margin-left: 5px;
   border-radius: 5px;
@@ -39,4 +39,10 @@
 
 .chatter {
   color: #444;
+}
+
+.btn {
+  border-bottom-left-radius: 0px;
+  background-color: #3498DB;
+  border: none;
 }
