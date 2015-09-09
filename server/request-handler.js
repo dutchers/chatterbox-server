@@ -56,12 +56,11 @@ var requestHandler = function (req, res) {
   //MESSAGES
 
   } else if (path === '/classes/messages' && req.method == 'GET') {
-
-    res.writeHead(getSuccess, headers);
-    res.write(JSON.stringify({
+    var data2 = JSON.stringify({
       results: results
-    }));
-    res.end();
+    });
+    res.writeHead(getSuccess, headers);
+    res.end(data2);
 
   } else if (path === '/classes/messages' && req.method === 'POST') {
     var messageString = '';

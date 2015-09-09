@@ -3,35 +3,52 @@
   <head>
     <meta charset="utf-8">
     <title>chatterbox</title>
+    <link rel="stylesheet" type="text/css" href="bower_components/bootstrap/dist/css/bootstrap.css">
     <link rel="stylesheet" href="styles/styles.css">
 
   </head>
   <body>
-    <div id="main">
-      <h1>chatter<em>box</em></h1>
-      <div class="spinner"><img src="images/spiffygif_46x46.gif"></div>
-      <form action="#" id="send" method="post">
-        <input type="text" name="message" id="message"/>
-        <input type="submit" name="submit" class="submit"/>
-      </form>
-    </div>
-    <div id="chats"></div>
+    <div class="container">
+      <h1 class="page-header"><span class="chatter">chattr</span><span class="boxness">box</span></h1>
+      <div class="something"></div>
+      <div class="chats col-md-8 col-md-offset-2">
 
+
+      </div>
+
+
+
+    <script id="chat-template" type="text/template">
+
+         <div class="pull-left"><span class="username"><%- username %></span>: <span class="text"><%- text %></span></div> <div class="pull-right time"><%- createdAt %></div>
+
+    </script>
+
+    <script type="text/template" id="input-template">
+    <div class="row">
+    <div class="col-md-8 col-md-offset-4">
+    <form class="form-inline">
+      <div class="form-group">
+      <input type="text" name="user" id="user" class="form-control" placeholder="Who are you?">
+      </div>
+      <div class="form-group">
+      <input type="text" class="form-control" name="message" id="message" placeholder="Say something." />
+      </div>
+      <button type="submit" class="btn btn-primary btn-lg">Send</button>
+      </form>
+      </div>
+    </script>
     <!-- dependencies -->
     <script src="bower_components/jquery/dist/jquery.js"></script>
+    <script src="bower_components/moment/moment.js"></script>
     <script src="bower_components/underscore/underscore.js"></script>
     <script src="bower_components/backbone/backbone.js"></script>
     <!-- your scripts -->
+    <script src="scripts/models/message.js"></script>
+    <script src="scripts/collections/messages.js"></script>
+    <script src="scripts/views/messageView.js"></script>
+    <script src="scripts/views/messagesView.js"></script>
+    <script src="scripts/views/formView.js"></script>
     <script src="scripts/app.js"></script>
-
-    <script>
-      $(function(){
-          var messages     = new Messages();
-          var formView     = new FormView(    {el: $('#main'),  collection: messages});
-          var messagesView = new MessagesView({el: $('#chats'), collection: messages});
-          // setInterval(messages.loadMsgs.bind(messages), 1000);
-          messages.loadMsgs();
-      });
-    </script>
   </body>
 </html>
